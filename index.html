@@ -1,234 +1,168 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Y. Vinay - Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #111827;
-            color: #d1d5db;
-        }
-        .section {
-            padding: 4rem 1rem;
-        }
-        @media (min-width: 640px) {
-            .section {
-                padding: 6rem 2rem;
-            }
-        }
-        .section-title {
-            font-size: 2.25rem;
-            font-weight: 700;
-            margin-bottom: 3rem;
-            text-align: center;
-            color: #f9fafb;
-        }
-        .nav-link {
-            transition: color 0.3s ease;
-        }
-        .nav-link:hover {
-            color: #3b82f6;
-        }
-        .card {
-            background-color: #1f2937;
-            border-radius: 0.75rem;
-            padding: 2rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid #374151;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-        .skill-icon {
-            transition: transform 0.3s ease;
-        }
-        .skill-icon:hover {
-            transform: translateY(-10px);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Y. Vinay - Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .section { padding: 4rem 1rem; }
+    @media (min-width: 640px) { .section { padding: 6rem 2rem; } }
+    .section-title { font-size: 2.25rem; font-weight: 700; margin-bottom: 3rem; text-align: center; }
+    .card { border-radius: 0.75rem; padding: 2rem; border: 1px solid; transition: all 0.3s ease; }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px rgba(0,0,0,0.2); }
+  </style>
 </head>
-<body class="bg-gray-900 text-gray-300">
+<body class="bg-gray-900 text-gray-300 dark:bg-gray-100 dark:text-gray-900">
 
-    <!-- Navigation Bar -->
-    <nav class="bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-700">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <div class="flex-shrink-0">
-                    <a href="#" class="text-white font-bold text-xl">Y. Vinay</a>
-                </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="#about" class="nav-link px-3 py-2 rounded-md text-sm font-medium">About</a>
-                        <a href="#skills" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Skills</a>
-                        <a href="#projects" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Projects</a>
-                        <a href="#education" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Education</a>
-                        <a href="#contact" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Contact</a>
-                    </div>
-                </div>
-            </div>
+  <!-- Navbar -->
+  <nav class="bg-gray-900/80 dark:bg-gray-200/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-700 dark:border-gray-300">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="#" class="text-white dark:text-black font-bold text-xl">Y. Vinay</a>
+        <div class="hidden md:flex space-x-4">
+          <a href="#about" class="nav-link">About</a>
+          <a href="#skills" class="nav-link">Skills</a>
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="#education" class="nav-link">Education</a>
+          <a href="#experience" class="nav-link">Experience</a>
+          <a href="#contact" class="nav-link">Contact</a>
         </div>
-    </nav>
+        <!-- Dark Mode Toggle -->
+        <button id="theme-toggle" class="ml-4 p-2 rounded-lg border border-gray-500 dark:border-gray-400">
+          <i id="theme-icon" class="fas fa-moon"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
 
-    <!-- Hero Section -->
-    <header id="home" class="section flex items-center justify-center text-center bg-gray-900">
-        <div class="max-w-3xl">
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white">
-                Hi, I'm <span class="text-blue-500">Y. Vinay</span>
-            </h1>
-            <p class="mt-4 text-lg sm:text-xl text-gray-400">
-                An Aspiring Software Engineer specializing in Python, Java, and the MERN stack.
-            </p>
-            <a href="#projects" class="mt-8 inline-block bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition duration-300">
-                View My Work
-            </a>
+  <!-- Hero -->
+  <header id="home" class="section flex items-center justify-center text-center">
+    <div class="max-w-3xl" data-aos="zoom-in">
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold">
+        Hi, I'm <span class="text-blue-500">Y. Vinay</span>
+      </h1>
+      <p class="mt-4 text-lg sm:text-xl">
+        Enthusiastic CS student skilled in Python, Java, and MERN Stack. Passionate about full-stack development, problem-solving & UI/UX.
+      </p>
+      <a href="#projects" class="mt-8 inline-block bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700">View My Work</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- About -->
+    <section id="about" class="section bg-gray-800/50 dark:bg-gray-200/40" data-aos="fade-up">
+      <h2 class="section-title">About Me</h2>
+      <p class="max-w-3xl mx-auto text-center text-lg">
+        Enthusiastic Computer Science student with strong foundations in Python, Java, and MERN stack development. Actively creating impactful projects like Deal Detector and TrackTrove, with interests in competitive programming and UI/UX design.
+      </p>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section" data-aos="fade-up">
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div><i class="fab fa-python fa-3x text-blue-400"></i><p>Python</p></div>
+        <div><i class="fab fa-java fa-3x text-red-400"></i><p>Java</p></div>
+        <div><i class="fab fa-react fa-3x text-cyan-400"></i><p>React.js</p></div>
+        <div><i class="fab fa-node-js fa-3x text-green-400"></i><p>Node.js / Express.js</p></div>
+        <div><i class="fas fa-database fa-3x text-green-500"></i><p>MongoDB</p></div>
+        <div><i class="fab fa-html5 fa-3x text-orange-400"></i><p>HTML & CSS</p></div>
+        <div><i class="fab fa-js fa-3x text-yellow-400"></i><p>JavaScript</p></div>
+        <div><i class="fab fa-git-alt fa-3x text-red-500"></i><p>Git</p></div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section bg-gray-800/50 dark:bg-gray-200/40" data-aos="fade-up">
+      <h2 class="section-title">Projects</h2>
+      <div class="grid lg:grid-cols-3 gap-8">
+        <div class="card border-gray-700 dark:border-gray-300"><h3>Deal Detector</h3><p>Price-tracking web app monitoring e-commerce sites and notifying users of best deals.</p></div>
+        <div class="card border-gray-700 dark:border-gray-300"><h3>Stealth Link</h3><p>Device monitoring tool to analyze and manage selected devices with network/data manipulation.</p></div>
+        <div class="card border-gray-700 dark:border-gray-300"><h3>TrackTrove</h3><p>Business management app for vendors to track sales, profit, inventory, and customer engagement.</p></div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="section" data-aos="fade-up">
+      <h2 class="section-title">Education</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="card border-gray-700 dark:border-gray-300"><h4>B.Tech CSE</h4><p>Malla Reddy University (2022 - Present) | CGPA: 7.93</p></div>
+        <div class="card border-gray-700 dark:border-gray-300"><h4>Intermediate (MPC)</h4><p>Sri Chaitanya Junior College (2020 - 2022) | 77.9%</p></div>
+        <div class="card border-gray-700 dark:border-gray-300"><h4>SSC</h4><p>Life Line High School (2019) | GPA: 9.3</p></div>
+      </div>
+    </section>
+
+    <!-- Experience & Internship -->
+    <section id="experience" class="section bg-gray-800/50 dark:bg-gray-200/40" data-aos="fade-up">
+      <h2 class="section-title">Experience & Internship</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="card border-gray-700 dark:border-gray-300">
+          <h4>Internship - UI/UX Designer</h4>
+          <p>Codtech IT Solutions (2024)</p>
         </div>
-    </header>
-
-    <main>
-        <!-- About Section -->
-        <section id="about" class="section bg-gray-800/50">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-                <h2 class="section-title">About Me</h2>
-                <p class="text-center text-lg leading-relaxed">
-                    Motivated and detail-oriented Software Engineer with hands-on experience in Python, Java, and full-stack development (MERN). Proficient in developing scalable web applications and solving complex problems. Eager to contribute to real-world projects and expand technical capabilities in a dynamic team environment.
-                </p>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="section">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="section-title">Technical Skills</h2>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                    <div class="space-y-2 skill-icon">
-                        <i class="fab fa-python fa-3x text-blue-400"></i>
-                        <p>Python</p>
-                    </div>
-                    <div class="space-y-2 skill-icon">
-                        <i class="fab fa-java fa-3x text-red-400"></i>
-                        <p>Java</p>
-                    </div>
-                    <div class="space-y-2 skill-icon">
-                        <i class="fab fa-react fa-3x text-cyan-400"></i>
-                        <p>React.js</p>
-                    </div>
-                    <div class="space-y-2 skill-icon">
-                        <i class="fab fa-node-js fa-3x text-green-400"></i>
-                        <p>Node.js / Express.js</p>
-                    </div>
-                    <div class="space-y-2 skill-icon">
-                        <i class="fas fa-database fa-3x text-green-500"></i>
-                        <p>MongoDB</p>
-                    </div>
-                     <div class="space-y-2 skill-icon">
-                        <i class="fab fa-html5 fa-3x text-orange-400"></i>
-                        <p>HTML & CSS</p>
-                    </div>
-                    <div class="space-y-2 skill-icon">
-                        <i class="fab fa-js-square fa-3x text-yellow-400"></i>
-                        <p>JavaScript</p>
-                    </div>
-                    <div class="space-y-2 skill-icon">
-                        <i class="fab fa-git-alt fa-3x text-red-500"></i>
-                        <p>Git</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="section bg-gray-800/50">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="section-title">Projects</h2>
-                <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
-                    <div class="card">
-                        <h3 class="text-xl font-bold mb-2 text-white">Deal Detector</h3>
-                        <p class="text-gray-400">A price tracking web app that monitors e-commerce platforms and alerts users about the best deals on their desired products.</p>
-                    </div>
-                    <div class="card">
-                        <h3 class="text-xl font-bold mb-2 text-white">Stealth Link</h3>
-                        <p class="text-gray-400">A device monitoring system built for analytics and manipulation tasks, providing enhanced control and visibility over selected devices.</p>
-                    </div>
-                    <div class="card">
-                        <h3 class="text-xl font-bold mb-2 text-white">Track Trove</h3>
-                        <p class="text-gray-400">A vendor-focused business tracker to monitor profits, stock levels, and other operational metrics with real-time reporting capabilities.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Education & Certifications Section -->
-        <section id="education" class="section">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="section-title">Education & Certifications</h2>
-                <div class="grid md:grid-cols-2 gap-12">
-                    <!-- Education Column -->
-                    <div>
-                        <h3 class="text-2xl font-bold mb-6 text-center text-white">Education</h3>
-                        <div class="space-y-6">
-                            <div class="card">
-                                <h4 class="font-bold text-lg">B.Tech in Computer Science</h4>
-                                <p class="text-gray-400">Malla Reddy University, Hyderabad</p>
-                                <p class="text-sm text-gray-500">2022 - Present | CGPA: 7.93</p>
-                            </div>
-                            <div class="card">
-                                <h4 class="font-bold text-lg">Intermediate</h4>
-                                <p class="text-gray-400">Sri Chaitanya Junior College, Hyderabad</p>
-                                <p class="text-sm text-gray-500">2020 - 2022 | Percentage: 77.9%</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Certifications Column -->
-                    <div>
-                        <h3 class="text-2xl font-bold mb-6 text-center text-white">Certifications</h3>
-                        <div class="card">
-                            <ul class="space-y-3 list-disc list-inside">
-                                <li>Python Fundamentals - Coursera</li>
-                                <li>Python Basics - Coursera</li>
-                                <li>AWS Essentials - Udemy</li>
-                                <li>Ethical Hacking: Linux Privilege Escalation - Udemy</li>
-                                <li>Security, Compliance and Identity Fundamentals - Microsoft</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Contact Section -->
-    <footer id="contact" class="section bg-gray-900 border-t border-gray-700">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="section-title">Get In Touch</h2>
-            <p class="max-w-2xl mx-auto mb-8">
-                I'm currently seeking new opportunities. Feel free to reach out if you have a project or role you think I'd be a good fit for.
-            </p>
-            <div class="flex justify-center items-center flex-wrap gap-4 sm:gap-8 text-lg">
-                <a href="mailto:vinaygoud0931@gmail.com" class="hover:text-blue-500 transition-colors">
-                    <i class="fas fa-envelope mr-2"></i>vinaygoud0931@gmail.com
-                </a>
-                <span class="text-gray-500">|</span>
-                <span>
-                    <i class="fas fa-phone-alt mr-2"></i>+91-9398559477
-                </span>
-                 <span class="text-gray-500">|</span>
-                 <span>
-                    <i class="fas fa-map-marker-alt mr-2"></i>Hyderabad, India
-                </span>
-            </div>
-            <div class="mt-8">
-                <p class="text-gray-500">&copy; 2024 Y. Vinay. All Rights Reserved.</p>
-            </div>
+        <div class="card border-gray-700 dark:border-gray-300">
+          <h4>Coordinator</h4>
+          <p>AutoExpo - Managed logistics & activities for 2 years</p>
         </div>
-    </footer>
+        <div class="card border-gray-700 dark:border-gray-300">
+          <h4>Anchor</h4>
+          <p>Farewell Event, MRU (2023)</p>
+        </div>
+      </div>
+    </section>
 
+    <!-- Certifications -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Certifications</h2>
+      <div class="card border-gray-700 dark:border-gray-300">
+        <ul class="list-disc list-inside">
+          <li>Python Fundamentals - Coursera</li>
+          <li>Python Basics - Coursera</li>
+          <li>AWS Essentials - Udemy</li>
+          <li>Ethical Hacking: Linux Privilege Escalation - Udemy</li>
+          <li>Security, Compliance and Identity Fundamentals - Microsoft</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- Contact -->
+  <footer id="contact" class="section bg-gray-900 dark:bg-gray-200 border-t border-gray-700 dark:border-gray-300" data-aos="fade-up">
+    <h2 class="section-title">Get In Touch</h2>
+    <div class="flex flex-col items-center space-y-4">
+      <a href="mailto:vinaygoud0931@gmail.com"><i class="fas fa-envelope mr-2"></i>vinaygoud0931@gmail.com</a>
+      <a href="https://linkedin.com/in/yeellamma-gudem-vinay-222828311" target="_blank"><i class="fab fa-linkedin mr-2"></i>LinkedIn</a>
+      <a href="https://github.com/vinay9477" target="_blank"><i class="fab fa-github mr-2"></i>GitHub</a>
+      <p><i class="fas fa-phone mr-2"></i>+91-9398559477 | Hyderabad, India</p>
+    </div>
+    <!-- CV Download -->
+    <div class="mt-6">
+      <a href="Academic_CV_vinay.pdf" download class="bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700">Download CV</a>
+    </div>
+    <p class="mt-8 text-gray-500">&copy; 2025 Y. Vinay. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Dark/Light Toggle
+    const toggleBtn = document.getElementById('theme-toggle');
+    const icon = document.getElementById('theme-icon');
+    toggleBtn.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      if(document.documentElement.classList.contains('dark')){
+        icon.classList.replace('fa-moon','fa-sun');
+      } else {
+        icon.classList.replace('fa-sun','fa-moon');
+      }
+    });
+    // AOS Init
+    AOS.init({ duration: 800, once: true });
+  </script>
 </body>
 </html>

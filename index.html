@@ -93,8 +93,11 @@
     </div>
   </nav>
 
-  <!-- Hero -->
-  <header id="home" class="section flex items-center justify-center text-center">
+  <!-- Hero Section -->
+  <header id="home" class="section flex flex-col items-center justify-center text-center">
+    <!-- Profile Image -->
+    <img src="DP_OFFICIAL.jpg" alt="Y. Vinay" class="w-40 h-40 rounded-full mb-6 object-cover border-4 border-blue-500" data-aos="fade-down">
+
     <div class="max-w-3xl" data-aos="zoom-in">
       <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold">
         Hi, I'm <span class="text-blue-500">Y. Vinay</span>
@@ -242,7 +245,7 @@
         <span><i class="fas fa-map-marker-alt mr-2"></i>Hyderabad, India</span>
       </div>
 
-      <!-- CV Download (forced download with fallback) -->
+      <!-- CV Download -->
       <div class="mt-8">
         <a id="download-cv" href="Academic_CV_vinay.pdf" download="Y_Vinay_CV.pdf"
            class="inline-flex items-center gap-2 bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition">
@@ -280,8 +283,8 @@
       setIcon();
     });
 
-    // Force-download CV (works on same-origin like local files / GitHub Pages)
-    const cvPath = 'Academic_CV_vinay.pdf'; // change if you move the file
+    // Force-download CV
+    const cvPath = 'Academic_CV_vinay.pdf';
     document.getElementById('download-cv').addEventListener('click', async (e) => {
       e.preventDefault();
       try {
@@ -297,29 +300,9 @@
         a.remove();
         URL.revokeObjectURL(url);
       } catch (err) {
-        // Fallback: navigate to file (browser may open it)
         location.href = cvPath;
       }
     });
   </script>
 </body>
 </html>
-<!-- Hero Section -->
-<header id="home" class="section flex flex-col items-center justify-center text-center">
-  <!-- Profile Image -->
-  <img src="DP_OFFICIAL.jpg" alt="Y. Vinay" class="w-40 h-40 rounded-full mb-6 object-cover border-4 border-blue-500" data-aos="fade-down">
-
-  <div class="max-w-3xl" data-aos="zoom-in">
-    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold">
-      Hi, I'm <span class="text-blue-500">Y. Vinay</span>
-    </h1>
-    <p class="mt-4 text-lg sm:text-xl">
-      Enthusiastic CS student skilled in Python, Java, and MERN Stack. Passionate about full-stack development, problem-solving & UI/UX.
-    </p>
-    <a href="#projects" class="mt-8 inline-block bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition">
-      View My Work
-    </a>
-  </div>
-</header>
-
-

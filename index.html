@@ -45,7 +45,16 @@
     .section-title { font-size: 2.25rem; font-weight: 700; margin-bottom: 3rem; text-align: center; }
     .card { border-radius: 0.75rem; padding: 2rem; border: 1px solid; transition: transform .3s ease, box-shadow .3s ease; }
     .card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px rgba(0,0,0,.2); }
-    .nav-link { @apply px-3 py-2 text-sm font-medium transition-colors; }
+    .nav-link {
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+      transition-duration: 150ms;
+    }
     .nav-link:hover { color: #3b82f6; }
   </style>
 </head>
@@ -63,6 +72,8 @@
           <a href="#projects" class="nav-link">Projects</a>
           <a href="#education" class="nav-link">Education</a>
           <a href="#experience" class="nav-link">Experience</a>
+          <a href="#internship" class="nav-link">Internship</a>
+          <a href="#positions" class="nav-link">Positions</a>
           <a href="#contact" class="nav-link">Contact</a>
         </div>
         <div class="flex items-center gap-2">
@@ -81,7 +92,10 @@
         <a href="#projects" class="block nav-link">Projects</a>
         <a href="#education" class="block nav-link">Education</a>
         <a href="#experience" class="block nav-link">Experience</a>
+        <a href="#internship" class="block nav-link">Internship</a>
+        <a href="#positions" class="block nav-link">Positions</a>
         <a href="#contact" class="block nav-link">Contact</a>
+
       </div>
     </div>
   </nav>
@@ -153,8 +167,101 @@
       </div>
     </section>
 
-    <!-- Education, Experience, Certifications will go here... -->
-    <!-- You can keep the rest of your sections same as before -->
+    <!-- Education Section -->
+<section id="education" class="section" data-aos="fade-up">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+    <h2 class="section-title">Education</h2>
+    <div class="card border-gray-700 dark:border-gray-300 mb-4">
+      <h3 class="text-lg font-bold">B.Tech in Computer Science and Engineering</h3>
+      <p>Malla Reddy University, Hyderabad, India (2022–Present)</p>
+      <p>CGPA: 7.93</p>
+    </div>
+    <div class="card border-gray-700 dark:border-gray-300 mb-4">
+      <h3 class="text-lg font-bold">Intermediate (MPC)</h3>
+      <p>Sri Chaitanya Junior College, Hyderabad, India (2020–2022)</p>
+      <p>Percentage: 77.9%</p>
+    </div>
+    <div class="card border-gray-700 dark:border-gray-300">
+      <h3 class="text-lg font-bold">Secondary Education (SSC)</h3>
+      <p>Life Line High School, Hyderabad, India (2019)</p>
+      <p>GPA: 9.3</p>
+    </div>
+  </div>
+</section>
+
+<!-- Internship Section -->
+<section id="internship" class="section bg-gray-800/50 dark:bg-gray-100" data-aos="fade-up">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+    <h2 class="section-title">Internship</h2>
+    <div class="card border-gray-700 dark:border-gray-300 mb-4">
+      <h3 class="text-lg font-bold">UI/UX Designer Intern</h3>
+      <p>Codtech IT Solutions (2024)</p>
+      <ul class="list-disc ml-6">
+        <li>Designed and implemented user-friendly UI components for client applications.</li>
+        <li>Improved usability and aesthetics in collaboration with design and dev teams.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Experience Section -->
+<section id="experience" class="section" data-aos="fade-up">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+    <h2 class="section-title">Experience</h2>
+    <div class="card border-gray-700 dark:border-gray-300 mb-4">
+      <h3 class="text-lg font-bold">Coordinator</h3>
+      <p>AutoExpo, Malla Reddy University (2 Years)</p>
+      <ul class="list-disc ml-6">
+        <li>Managed event activities, logistics, and student participation for 2 consecutive years.</li>
+      </ul>
+    </div>
+    <div class="card border-gray-700 dark:border-gray-300">
+      <h3 class="text-lg font-bold">Anchor</h3>
+      <p>Farewell Event, Malla Reddy University (2023)</p>
+      <ul class="list-disc ml-6">
+        <li>Hosted and coordinated stage events, demonstrating communication and leadership.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Positions of Responsibility Section -->
+<section id="positions" class="section bg-gray-800/50 dark:bg-gray-100" data-aos="fade-up">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+    <h2 class="section-title">Positions of Responsibility</h2>
+    <div class="card border-gray-700 dark:border-gray-300">
+      <h3 class="text-lg font-bold">Student Member</h3>
+      <p>Computer Society of India (CSI), Malla Reddy University (2022–Present)</p>
+      <ul class="list-disc ml-6">
+        <li>Active participant in CSI activities, workshops, and technical events.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Certifications Section -->
+<section id="certifications" class="section" data-aos="fade-up">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+    <h2 class="section-title">Certifications</h2>
+    <ul class="list-disc ml-6">
+      <li>Python Fundamentals – Coursera</li>
+      <li>Python Basics – Coursera</li>
+      <li>AWS Essentials – Udemy</li>
+      <li>Ethical Hacking: Linux Privilege Escalation – Udemy</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Additional Information Section -->
+<section id="additional" class="section bg-gray-800/50 dark:bg-gray-100" data-aos="fade-up">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+    <h2 class="section-title">Additional Information</h2>
+    <ul class="list-disc ml-6">
+      <li><strong>Languages:</strong> Telugu (Native), English (Fluent), Hindi (Fluent)</li>
+      <li><strong>Interests:</strong> Competitive Programming, Technical Discussions, Knowledge Sharing</li>
+    </ul>
+  </div>
+</section>
 
   </main>
 
@@ -240,5 +347,4 @@
   </script>
 </body>
 </html>
-
 
